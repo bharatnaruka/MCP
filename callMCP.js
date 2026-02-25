@@ -4,10 +4,50 @@ const url = "http://localhost:3000/mcp";
 
 const apiKey = "potatopaper@2026";
 
+const keyword1 = 'L852'
+const keyword2 = 'Grill'
+const keyword3 = 'Taylor Company'
+const translationText = "There is no greater tool than a home made MCP tool"
+const categories = ["Snacks", "Breakfast Cereal", "Dairy",  "Beverages",  "Flours",  "Cookies",  "Baking Items", "Meats", "Poultry" ]
 const payload = {
-prompt: 'search L852 grill and scrape the best matched result and extract product specifications in international units in the following format - "ProdSpecs" : {"ProdDesc":"", "ProdWidth":"","ProdHeight":"", "ProdDepth":"", "ProdWeight":""} '
-//prompt: 'Translate the following text in German and provide the result in the following format "translatedText" : {"language":"...", "text":"..."}. The text to be translated is -- "There is no greate tool than a home made MCP tool"'
-//prompt: 'Categorize product with description as "Original Cheerios Heart Healthy Cereal" into one of the following categories ---> "Snacks, Breakfast Cereal, Dairy, Beverages, Flours, Cookies, Baking Items, Meats, Poultry". Provide the formatted response in following JSON format {"category":"..."}  '
+  /*
+  prompt: `
+
+    Search the following product -
+      ${keyword1}, ${keyword2}, ${keyword3}
+      
+    Scrape the best matched result 
+    
+    Extract product specs from scraped content and return in as following JSON 
+    
+    "ProdSpecs" : { "ProdDesc":"...", "ProdWidth":"...", "ProdHeight":"...", "ProdDepth":"...", "ProdWeight":"..."} 
+    
+    No Categorization Needed.
+
+    `
+  */
+
+/*
+prompt: `Translate the following text in German -
+
+    ${translationText}
+
+  Provide the translated text in the following format - 
+
+    "translatedText" : {"language":"...", "text":"..."}. `
+*/
+
+
+prompt: `
+  Categorize product with description -
+  
+  "Yummy and creamy fat-free yogurt" 
+  
+  into one of the following categories -
+  
+  ${categories}
+  
+  Provide the formatted response in following JSON format {"category":"..."}  `
 };
 
 async function callMCP() {

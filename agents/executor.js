@@ -1,8 +1,9 @@
-import { searchTool } from "file:///C:/Users/bhara/Documents/MCP/tools/search.js";
-import { scrapeTool } from "file:///C:/Users/bhara/Documents/MCP/tools/scrape.js";
-import { translateTool } from "file:///C:/Users/bhara/Documents/MCP/tools/translate.js";
-import { categorizeTool } from "file:///C:/Users/bhara/Documents/MCP/tools/categorize.js";
-import { formatTool } from "file:///C:/Users/bhara/Documents/MCP/tools/format.js";
+import { translateTool } from "../tools/translate.js";
+import { searchTool } from "../tools/search.js";
+import { scrapeTool } from "../tools/scrape.js";
+import { categorizeTool } from "../tools/categorize.js";
+import { formatTool } from "../tools/format.js";
+
 
 export async function executePlan(plan, userPrompt) {
   let context = {};
